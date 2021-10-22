@@ -4,7 +4,7 @@
 </style>
 
 <script lang="ts">
-    import ProjectBrowser from "../lib/projects-browser.svelte";
+    import ProjectBrowser from "../components/projects/projects-browser.svelte";
 </script>
 
 <h1>Welcome to SvelteKit</h1>

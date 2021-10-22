@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@sveltejs/kit": "next",
+    "@types/yup": "^0.29.13",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
     "eslint": "^7.32.0",
@@ -30,9 +31,13 @@
   },
   "type": "module",
   "dependencies": {
+    "@smui/button": "^5.0.0-beta.7",
     "@smui/fab": "^5.0.0-beta.7",
+    "@smui/form-field": "^5.0.0-beta.7",
     "@smui/icon-button": "^5.0.0-beta.7",
+    "@smui/textfield": "^5.0.0-beta.7",
     "aframe": "^1.2.0",
-    "aframe-svelte": "^1.0.1"
+    "aframe-svelte": "^1.0.1",
+    "yup": "^0.32.11"
   }
 }

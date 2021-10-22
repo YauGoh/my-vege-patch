@@ -1,5 +1,5 @@
 <style lang="scss">
-    @import "../scss/_variables";
+    @import "../../scss/_variables";
 
     .floating-panel-container {
         position: fixed;
@@ -45,12 +45,10 @@
 </style> 
 
 <script lang="ts">
-    import Anchor from "./anchor";
+    import { Anchor } from "./anchor";
     
     export let anchor: Anchor = Anchor.Left;
     export let show: boolean = false;
-   
-    export { Anchor }
 </script>
 
 <div class="floating-panel-container {anchor === Anchor.Left ? 'left' : 'right'}"

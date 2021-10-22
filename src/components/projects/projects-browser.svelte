@@ -1,5 +1,5 @@
 <style lang="scss">
-    @import "../scss/_variables";
+    @import "../../scss/_variables.scss";
 
     h1 {
         color: pink;
@@ -15,9 +15,11 @@
 </style>
 
 <script lang="ts">
-    import Anchor from "../lib/anchor";
-    import FloatingPanel from "../lib/floating-panel.svelte";
-    import FloatingPanelHeader from "../lib/floating-panel-header.svelte";
+    import { Anchor } from "../common";
+    import FloatingPanel from "../common/floating-panel.svelte";
+    import FloatingPanelHeader from "../common/floating-panel-header.svelte";
+    import AddProjectForm from "../projects/add-project-form.svelte";
+
     import Fab, { Icon } from '@smui/fab';
 
     let isAddPanelVisible: boolean = false;
@@ -42,5 +44,5 @@
     anchor={Anchor.Right}
     show={isAddPanelVisible}>
     <FloatingPanelHeader slot="header" on:click={() => isAddPanelVisible = false}><h1>New Project</h1></FloatingPanelHeader>
-    This is anchored Right
+    <AddProjectForm />
 </FloatingPanel>
