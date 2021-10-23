@@ -6,14 +6,14 @@
     import type { ValidationError } from 'yup';
     import Button, { Label } from '@smui/button';
     import TextField from '@smui/textfield';
-    import { CreateProjectCommand, createProjectCommandSchema, createProject } from './commands';
+    import { createProject, CreateProjectCommand, createProjectCommandSchema } from './models/project';
 
     let command: CreateProjectCommand = { name: '' };
-    let validationErrors: ValidationError | undefined;
+    let validationErrors: ValidationError[] = [];
 
     const resetCommand = () => command = { name: '' };
 
-    const resetErrors = () => validationErrors = undefined;
+    const resetErrors = () => validationErrors = [];
 
     const onSubmit = () => {
         createProjectCommandSchema.validate(
@@ -21,16 +21,17 @@
             { abortEarly: false }
         )
         .then(() => createProject(command).then(resetCommand).then(resetErrors))
-        .catch(errors => validationErrors = errors);
+        .catch(errors => validationErrors = errors.inner);
     }
 
-    $: nameError = validationErrors?.inner.some(_ => _.path === "name");
+    $: nameError = validationErrors.some(_ => _.path === "name");
+
 </script>
 
 <form on:submit|preventDefault={onSubmit}>
     {#if validationErrors}
     <ul>
-        {#each validationErrors.inner as error}
+        {#each validationErrors as error}
             <li>{error.path} - {error.message}</li>
         {/each}
     </ul>

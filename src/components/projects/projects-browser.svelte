@@ -15,19 +15,17 @@
 </style>
 
 <script lang="ts">
-    import { Anchor } from "../common";
     import FloatingPanel from "../common/floating-panel.svelte";
     import FloatingPanelHeader from "../common/floating-panel-header.svelte";
     import AddProjectForm from "../projects/add-project-form.svelte";
 
     import Fab, { Icon } from '@smui/fab';
+    import { Anchor } from "../common/anchor";
 
     let isAddPanelVisible: boolean = false;
 
     const showAdd = () => isAddPanelVisible = true;
 </script>
-
-<div>Huh??</div>
 
 <FloatingPanel anchor="{Anchor.Left}" show="{false}">
     <h1 slot="header">Left</h1>
