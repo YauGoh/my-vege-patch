@@ -6,7 +6,7 @@
     import type { ValidationError } from 'yup';
     import Button, { Label } from '@smui/button';
     import TextField from '@smui/textfield';
-    import { createProject, CreateProjectCommand, createProjectCommandSchema } from './models/project';
+    import { createProject, CreateProjectCommand, createProjectCommandSchema } from './commands/createProject';
 
     let command: CreateProjectCommand = { name: '' };
     let validationErrors: ValidationError[] = [];
