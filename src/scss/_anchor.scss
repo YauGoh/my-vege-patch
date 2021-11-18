@@ -1,0 +1,21 @@
+@import "variables";
+
+.anchor {
+    position: fixed;
+    
+    &--left {
+        left: $spacing;
+    }
+
+    &--right {
+        right: $spacing;
+    }
+
+    &--top {
+        top: $spacing;
+    }
+
+    &--bottom {
+        bottom: $spacing;
+    }
+}

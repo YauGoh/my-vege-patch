@@ -6,7 +6,8 @@
     import type { ValidationError } from 'yup';
     import Button, { Label } from '@smui/button';
     import TextField from '@smui/textfield';
-    import { createProject, CreateProjectCommand, createProjectCommandSchema } from './commands/createProject';
+    import { CreateProjectCommand, createProjectCommandSchema } from './commands/createProject';
+    import { projectStore } from './stores/projectStore';
 
     let command: CreateProjectCommand = { name: '' };
     let validationErrors: ValidationError[] = [];
@@ -20,7 +21,7 @@
             command, 
             { abortEarly: false }
         )
-        .then(() => createProject(command).then(resetCommand).then(resetErrors))
+        .then(() => projectStore.addProject(command).then(resetCommand).then(resetErrors))
         .catch(errors => validationErrors = errors.inner);
     }
 

@@ -1,0 +1,28 @@
+@import "variables";
+
+$popup-border: 1px solid darkgrey;
+$popup-background: grey;
+
+.popup {
+    position: fixed;
+
+    background: $popup-background;
+    border: $popup-border;
+    padding: $padding;
+
+    &--anchor-left {
+        left: $spacing;
+    }
+
+    &--anchor-right {
+        right: $spacing;
+    }
+
+    &--anchor-top {
+        top: $spacing;
+    }
+
+    &--anchor-bottom {
+        bottom: $spacing;
+    }
+}

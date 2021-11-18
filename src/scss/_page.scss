@@ -1,0 +1,11 @@
+@import "variables";
+
+.page {
+    &__header {
+        font-size: 2rem;
+    }
+
+    &__content {
+        flex: 1;
+    }
+}
